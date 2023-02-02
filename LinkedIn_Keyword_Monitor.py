@@ -90,17 +90,20 @@ df12 = df['query'].value_counts()
 
 
 
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=DB%20E.C.O.%20Group&origin=FACETED_SEARCH&sid=.so&sortBy=%22date_posted%22", "Keyword"] = "DB E.C.O. Group"
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&heroEntityKey=urn%3Ali%3Aorganization%3A390413&keywords=db%20engineering%20%26%20consulting&origin=FACETED_SEARCH&position=0&searchId=e0bd36db-917f-4150-ae5c-211ebdbd12c8&sid=X3x&sortBy=%22date_posted%22", "Keyword"] = "DB Engineering & Consulting"
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Niko%20Warbanoff&origin=FACETED_SEARCH&sid=.Y%2C&sortBy=%22date_posted%22", "Keyword"] = "Niko Warbanoff"
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=future%20mobility&origin=FACETED_SEARCH&sid=7Wf&sortBy=%22date_posted%22", "Keyword"] = "Future of Mobility"
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Transformation%20transportation&origin=FACETED_SEARCH&sid=ze9&sortBy=%22date_posted%22", "Keyword"] = "Transformation of Transportation"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAAH0AkBG3WwOrskMEtQ8V3mNrBALN1eHEU&keywords=jan-hendrik%20goldbeck&origin=FACETED_SEARCH&position=0&searchId=75b8d126-5b8b-415c-9520-f7325387ce36&sid=iil&sortBy=%22date_posted%22", "Keyword"] = "Jan-Hendrik Goldbeck"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=goldbeck&origin=GLOBAL_SEARCH_HEADER&sid=A8u&sortBy=%22date_posted%22", "Keyword"] = "Goldbeck"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Familienunternehmen&origin=GLOBAL_SEARCH_HEADER&sid=NbE&sortBy=%22date_posted%22", "Keyword"] = "Familienunternehmen"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Baubranche&origin=GLOBAL_SEARCH_HEADER&sid=R9I&sortBy=%22date_posted%22", "Keyword"] = "Baubranche"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&heroEntityKey=urn%3Ali%3Aorganization%3A7017510&keywords=bauunternehmen&origin=FACETED_SEARCH&position=0&searchId=163c13fc-8ae8-4cd9-ad83-4e6f568918f6&sid=!.Q&sortBy=%22date_posted%22", "Keyword"] = "Bauunternehmen"
 
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Transformation%20mobility&origin=FACETED_SEARCH&sid=YW0&sortBy=%22date_posted%22", "Keyword"] = "Transformation of Mobility"
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Rail%20industry&origin=FACETED_SEARCH&sid=%2C88&sortBy=%22date_posted%22", "Keyword"] = "Rail Industry"
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Railway%20industry&origin=FACETED_SEARCH&sid=kQn&sortBy=%22date_posted%22", "Keyword"] = "Railway Industry"
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Digital%20rail&origin=FACETED_SEARCH&sid=P64&sortBy=%22date_posted%22", "Keyword"] = "Digital Rail"
-df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Deutsche%20Bahn%20International&origin=FACETED_SEARCH&sid=N3z&sortBy=%22date_posted%22", "Keyword"] = "Deutsche Bahn International"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Construction&origin=GLOBAL_SEARCH_HEADER&sid=LP!&sortBy=%22date_posted%22", "Keyword"] = "Construction"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Nachhaltig%20bauen&origin=GLOBAL_SEARCH_HEADER&sid=cE9&sortBy=%22date_posted%22", "Keyword"] = "Nachhaltig bauen"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&heroEntityKey=urn%3Ali%3Aorganization%3A1347310&keywords=unternehmertum&origin=FACETED_SEARCH&position=0&searchId=4e28a0ac-c382-43ab-b6ba-4545cffed1cd&sid=RjC&sortBy=%22date_posted%22", "Keyword"] = "Unternehmertum"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Digitale%20Transformation&origin=GLOBAL_SEARCH_HEADER&sid=_s%3A&sortBy=%22date_posted%22", "Keyword"] = "Digitale Transformation"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Founders%20Foundation&origin=GLOBAL_SEARCH_HEADER&sid=koY&sortBy=%22date_posted%22", "Keyword"] = "Founders Foundation"
+
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Immobilienverband&origin=GLOBAL_SEARCH_HEADER&sid=cHE&sortBy=%22date_posted%22", "Keyword"] = "Immobilienverband"
+df.loc[(df['query']) == "https://www.linkedin.com/search/results/content/?datePosted=%22past-24h%22&keywords=Zentrale%20Immobilien%20Ausschuss&origin=GLOBAL_SEARCH_HEADER&sid=4~n&sortBy=%22date_posted%22", "Keyword"] = "Zentrale Immobilien Ausschuss"
 
 
 
