@@ -26,7 +26,7 @@ with col2:
 	st.header("Data Team Dashboard")
 
 
-st.title('Niko Warbanoff: LinkedIn Keyword Search Monitoring')
+st.title('Goldbeck: LinkedIn Keyword Search Monitoring')
 
 st.image(
     "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png",
