@@ -49,7 +49,7 @@ day = datetime.today().day
 
 #dobner_search_results = f'https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/WVWDm0XnEmqgQ4iNu89Rkg/dobner_keywordSearchMonitor{month}_{day}.csv'
 
-dobner_search_results = 'https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/HqI9Zcqdu5EZ6aqaXrXumg/nikowarbanoff_keywordSearchMonitor2_2.csv'
+dobner_search_results = 'https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/oDfyebloqgv0oJOAUHK3zw/goldbeck_keywordSearchMonitor2_2_1.csv'
 
 						 #https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/WVWDm0XnEmqgQ4iNu89Rkg/dobner_keywordSearchMonitor1_18.csv
 
@@ -141,32 +141,37 @@ with search_results:
 ## subtab under search results tabs
 	#tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12, tab13, tab14 = st.tabs(["All", "Steuer", "ELSTER", "Grundsteuer", "Erbschaftssteuer", "Steuerrecht", "Finanzamt", "Internationales","Übererwerbsteuer","Tax Law", "Search for a Keyword Inside Posts","Rainer Holznagel","Christian Lindner","Dr. Dominik Benner"])
 	#tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11,tab12 = st.tabs(["All", "DB E.C.O. Group", "DB Engineering & Consulting", "Niko Warbanoff", "Future of Mobility", "Transformation of Transportation", "Transformation of Mobility", "Rail Industry","Railway Industry","Digital Rail","Deutsche Bahn International", "Search for a Keyword Inside Posts"])
-	tab1, tab2, tab3, tab4, tab5, tab12 = st.tabs(["All", "DB E.C.O. Group", "DB Engineering & Consulting", "Niko Warbanoff",'Other Keywords', "Search for a Keyword Inside Posts"])
+	tab1, tab2, tab3, tab4, tab12 = st.tabs(["All", "Jan-Hendrik Goldbeck", "Goldbeck",'Baubranche', "Search for a Keyword Inside Posts"])
 
 	df.sort_values([option], ascending=False, inplace=True)
 	df_all = df
 
-	df_renew = df.loc[df.Keyword == 'DB E.C.O. Group']
+	df_renew = df.loc[df.Keyword == 'Jan-Hendrik Goldbeck']
 	df_renew = df_renew.reset_index(drop=True)
-	df_wind = df.loc[df.Keyword == 'DB Engineering & Consulting']
+	df_wind = df.loc[df.Keyword == 'Goldbeck']
 	df_wind = df_wind.reset_index(drop=True)
-	df_gru = df.loc[df.Keyword == 'Niko Warbanoff']
+	df_gru = df.loc[df.Keyword == 'Familienunternehmen']
 	df_gru = df_gru.reset_index(drop=True)
-	df_erb = df.loc[df.Keyword == 'Future of Mobility']
+	df_erb = df.loc[df.Keyword == 'Baubranche']
 	df_erb = df_erb.reset_index(drop=True)
-	df_Steuerrecht = df.loc[df.Keyword == 'Transformation of Transportation']
+	df_Steuerrecht = df.loc[df.Keyword == 'Bauunternehmen']
 	df_Steuerrecht = df_Steuerrecht.reset_index(drop=True)
-	df_fin = df.loc[df.Keyword == 'Transformation of Mobility']
-	df_fin = df_fin.reset_index(drop=True)
-	df_intern = df.loc[df.Keyword == 'Rail Industry']
-	df_intern = df_intern.reset_index(drop=True)
-	df_tax = df.loc[df.Keyword == 'Railway Industry']
-	df_tax = df_tax.reset_index(drop=True)
 
-	df_dr = df.loc[df.Keyword == 'Digital Rail']
+	df_fin = df.loc[df.Keyword == 'Construction']
+	df_fin = df_fin.reset_index(drop=True)
+	df_intern = df.loc[df.Keyword == 'Nachhaltig bauen']
+	df_intern = df_intern.reset_index(drop=True)
+	df_tax = df.loc[df.Keyword == 'Unternehmertum']
+	df_tax = df_tax.reset_index(drop=True)
+	df_dr = df.loc[df.Keyword == 'Digitale Transformation']
 	df_dr = df_dr.reset_index(drop=True)
-	df_dbi = df.loc[df.Keyword == 'Deutsche Bahn International']
+	df_dbi = df.loc[df.Keyword == 'Founders Foundation']
 	df_dbi = df_dbi.reset_index(drop=True)
+
+	df_iv = df.loc[df.Keyword == 'Immobilienverband']
+	df_iv = df_iv.reset_index(drop=True)
+	df_zia = df.loc[df.Keyword == 'Zentrale Immobilien Ausschuss']
+	df_zia = df_zia.reset_index(drop=True)
 
 
 
@@ -184,8 +189,11 @@ with search_results:
 	df_dr['Hour'] = pd.to_datetime(df_dr.postDate).dt.strftime("%H")
 	df_dbi['Hour'] = pd.to_datetime(df_dbi.postDate).dt.strftime("%H")
 
+	df_iv['Hour'] = pd.to_datetime(df_iv.postDate).dt.strftime("%H")
+	df_zia['Hour'] = pd.to_datetime(df_zia.postDate).dt.strftime("%H")
 
-	df_all_keywords = pd.concat([df_erb,df_Steuerrecht,df_fin,df_intern,df_tax,df_dr,df_dbi], axis=0)
+
+	df_all_keywords = pd.concat([df_gru,df_erb,df_Steuerrecht,df_fin,df_intern,df_tax,df_dr,df_dbi,df_iv,df_zia], axis=0)
 	df_all_keywords = df_all_keywords.reset_index(drop=True)
 
 
@@ -224,7 +232,7 @@ with search_results:
 
 
 	with tab2:
-		if st.button('Show Data with Keyword DB E.C.O. Group'):
+		if st.button('Show Data with Keyword Jan-Hendrik Goldbeck'):
 			st.write(df_renew)
 
 		st.write(f'Total posts found in last Hours: ', df_renew.shape[0])
@@ -247,7 +255,7 @@ with search_results:
 
 
 	with tab3:
-		if st.button('Show Data with Keyword DB Engineering & Consulting'):
+		if st.button('Show Data with Keyword Goldbeck'):
 			st.write(df_wind)
 
 		st.write(f'Total posts found in last Hours: ', df_wind.shape[0])
@@ -271,29 +279,7 @@ with search_results:
 
 
 	with tab4:
-		if st.button('Show Data with Keyword Niko Warbanoff'):
-			st.write(df_gru)
-
-		st.write(f'Total posts found in last Hours: ', df_gru.shape[0])
-		st.header(f'Most Recent Posts')
-		st.info(f'Most recent posts appear based on {option}', icon="ℹ️")
-
-		df_gru = df_gru.reset_index(drop=True)
-		num_posts = df_gru.shape[0]
-
-		if  num_posts>0:
-			splits = df_gru.groupby(df_gru.index // 3)
-			for _, frames in splits:
-				frames = frames.reset_index(drop=True)
-				thumbnails = st.columns(frames.shape[0])
-				for i, c in frames.iterrows():
-					with thumbnails[i]:
-						printFunction(i, c, frames)               				
-		else:
-			printError()
-	
-	with tab5:
-		if st.button('Show Data with Keyword Future of Mobility , Transformation of Transportation, Transformation of Mobility, Rail Industry, Railway Industry, Digial Rail and DB International'):
+		if st.button('Show Data with Keyword Familienunternehmen , Baubranche, Bauunternehmen, Construction, Nachhaltig bauen, Unternehmertum','Digitale Transformation','Founders Foundation','Immobilienverband','Zentrale Immobilien Ausschuss'):
 			st.write(df_all_keywords)
 
 		st.write(f'Total posts found in last Hours: ', df_all_keywords.shape[0])
@@ -310,10 +296,10 @@ with search_results:
 				thumbnails = st.columns(frames.shape[0])
 				for i, c in frames.iterrows():
 					with thumbnails[i]:
-							printFunction(i, c, frames)             
+						printFunction(i, c, frames)               				
 		else:
 			printError()
-
+	
 
 	with tab12:
 		title = st.text_input('Search for a keyword inside posts', 'sustainability')
