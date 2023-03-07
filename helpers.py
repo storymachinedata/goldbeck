@@ -95,9 +95,52 @@ def getActualDate(url):
 
 
 
+# def printFunction(i, rows, dataframe):
+#     if not pd.isnull(rows['profileImgUrl']):
+#         st.image(rows['profileImgUrl'], width=150)
+
+#     if not pd.isnull(rows['profileUrl']):
+#         #st.image(rows['profileImgUrl'], width=150)
+#         st.subheader(dataframe.fullName[i])
+#         st.write('Personal Account')
+#         st.write(rows['title']) #postType
+#         st.write('-----------')
+#         if not pd.isnull(rows['postImgUrl']):
+#             st.image(rows['postImgUrl'])
+#         st.info(rows['textContent'])  #postrowsontent
+#         st.write('Total Interactions 📈:  ',rows['Total Interactions']) #totInterarowstions
+#         st.write('Likes 👍:  ',rows['likeCount']) #totInterarowstions
+#         st.write('Comments 💬:  ',rows['commentCount']) #totInterarowstions
+#         #st.write('Arowstion 📌:  ',rows['arowstion']) #totInterarowstions
+#         st.write('Publish Date & Time 📆:         ',rows['postDate']) #publishDate
+#         with st.expander('Link to this Post 📮'):
+#                 st.write(rows['postUrl']) #linktoPost
+#         with st.expander('Link to  Profile 🔗'):
+#                 st.write(rows['profileUrl']) #linktoProfile
+    
+#     if not pd.isnull(rows['logoUrl']):
+#         st.image(rows['logoUrl'], width=150)
+#         st.subheader(rows['companyName'])
+#         st.write('Corporate Account')
+#         st.write('👥:  ',rows['followerCount'])
+#         if not pd.isnull(rows['postImgUrl']):
+#             st.image(rows['postImgUrl'])
+#         st.info(rows['textContent'])  #postrowsontent
+#         st.write('Total Interactions 📈:  ',rows['Total Interactions']) #totInterarowstions
+#         st.write('Likes 👍:  ',rows['likeCount']) #totInterarowstions
+#         st.write('Comments 💬:  ',rows['commentCount']) #totInterarowstions
+#         #st.write('Arowstion 📌:  ',rows['arowstion']) #totInterarowstions
+#         st.write('Publish Date & Time 📆:         ',rows['postDate']) #publishDate
+#         with st.expander('Link to this Post 📮'):
+#                 st.write(rows['postUrl']) #linktoPost
+#         with st.expander('Link to  Company Profile 🔗'):
+#                 st.write(rows['companyUrl']) #linktoProfile
+
+
 def printFunction(i, rows, dataframe):
-    if not pd.isnull(rows['profileImgUrl']):
-        st.image(rows['profileImgUrl'], width=150)
+    if 'profileImgUrl' in dataframe.columns:
+        if not pd.isnull(rows['profileImgUrl']):
+            st.image(rows['profileImgUrl'], width=150)
 
     if not pd.isnull(rows['profileUrl']):
         #st.image(rows['profileImgUrl'], width=150)
@@ -105,8 +148,9 @@ def printFunction(i, rows, dataframe):
         st.write('Personal Account')
         st.write(rows['title']) #postType
         st.write('-----------')
-        if not pd.isnull(rows['postImgUrl']):
-            st.image(rows['postImgUrl'])
+        if 'postImgUrl' in dataframe.columns: 
+            if not pd.isnull(rows['postImgUrl']):
+                st.image(rows['postImgUrl'])
         st.info(rows['textContent'])  #postrowsontent
         st.write('Total Interactions 📈:  ',rows['Total Interactions']) #totInterarowstions
         st.write('Likes 👍:  ',rows['likeCount']) #totInterarowstions
@@ -117,24 +161,6 @@ def printFunction(i, rows, dataframe):
                 st.write(rows['postUrl']) #linktoPost
         with st.expander('Link to  Profile 🔗'):
                 st.write(rows['profileUrl']) #linktoProfile
-    
-    if not pd.isnull(rows['logoUrl']):
-        st.image(rows['logoUrl'], width=150)
-        st.subheader(rows['companyName'])
-        st.write('Corporate Account')
-        st.write('👥:  ',rows['followerCount'])
-        if not pd.isnull(rows['postImgUrl']):
-            st.image(rows['postImgUrl'])
-        st.info(rows['textContent'])  #postrowsontent
-        st.write('Total Interactions 📈:  ',rows['Total Interactions']) #totInterarowstions
-        st.write('Likes 👍:  ',rows['likeCount']) #totInterarowstions
-        st.write('Comments 💬:  ',rows['commentCount']) #totInterarowstions
-        #st.write('Arowstion 📌:  ',rows['arowstion']) #totInterarowstions
-        st.write('Publish Date & Time 📆:         ',rows['postDate']) #publishDate
-        with st.expander('Link to this Post 📮'):
-                st.write(rows['postUrl']) #linktoPost
-        with st.expander('Link to  Company Profile 🔗'):
-                st.write(rows['companyUrl']) #linktoProfile
 
 
 def printError():
